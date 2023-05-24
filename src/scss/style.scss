@@ -35,18 +35,135 @@
 
 //
 // BASIC styles
-// body {
-//   font-family: "Montserrat", sans-serif;
-//   color: variables.$main-headline-fcolor;
-// }
+body {
+  @include mixins.font-main-regular;
+}
 
-// .container,
-// .headline-wrapper {
-//   @media only screen and (min-width: 768px) {
-//     width: 768px;
-//   }
+.container {
+  margin: 0 auto;
+  padding: 0px variables.$padding-container;
 
-//   @media only screen and (min-width: 1200px) {
-//     width: 1170px;
-//   }
-// }
+  @media only screen and (max-width: 320px) {
+    min-width: 320px;
+  }
+}
+
+//
+// Header
+
+.header,
+.header-wrapper {
+  @include mixins.flexbox(space-between, center, row);
+}
+
+.header {
+  width: 100%;
+  padding: 0px 5px 0px 6px;
+
+  &-wrapper {
+    height: 103px;
+    background-color: variables.$bg-color-header-mobile;
+  }
+
+  &__logo {
+    width: 43px;
+    height: 41px;
+  }
+}
+
+.button,
+.main-block__headline,
+.main-block__headline-text {
+  text-transform: capitalize;
+}
+
+.button {
+  width: 119px;
+  height: 37px;
+  background-color: variables.$bg-color-page-main;
+  border-radius: 40px;
+  @include mixins.flexbox(center, center, row);
+  color: variables.$fonts-color-headers-main;
+  @include mixins.font-main-stress;
+  font-size: variables.$fonts-size-s-m;
+  line-height: variables.$fonts-line-height-s-s;
+}
+
+.header__nav-wrapper {
+  width: 26px;
+  height: 21px;
+  background-color: white;
+}
+
+//
+// Main block
+.main-block {
+  height: 691px;
+  @include mixins.flexbox(start, center, column);
+  // position: relative;
+
+  &__background {
+    background-image: url(../images/pictures/main-mobile.webp);
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-position-y: 400%;
+    text-align: center;
+    // height: 614px;
+  }
+
+  &__headline-wrapper {
+    padding-top: 49px;
+  }
+}
+
+.main-block__headline {
+  @include mixins.font-main-stress;
+  font-size: variables.$fonts-size-xl-m;
+  line-height: variables.$fonts-line-height-l-xxl;
+  color: variables.$fonts-color-headers-main;
+}
+
+.main-block__headline-text {
+  font-size: variables.$fonts-size-s-xl;
+  line-height: variables.$fonts-line-height-m-xl;
+  color: variables.$fonts-color-main;
+  margin-top: 21px;
+  height: 52px;
+
+  > span {
+    display: block;
+    text-transform: uppercase;
+    font-size: variables.$fonts-size-s-s;
+    line-height: variables.$fonts-line-height-s-xs;
+    color: variables.$fonts-color-text;
+    margin-top: 17px;
+  }
+}
+
+.main-block__button-wrapper {
+  width: 290px;
+  height: 78px;
+  margin-top: 421px;
+  // top: 670px;
+  // left: 15px;
+  // transform: ();
+  // @include mixins.flexbox(center, center, column);
+}
+
+.button--main-block {
+  // position: absolute;
+  // width: 290px;
+  height: 45px;
+  width: 100%;
+  // height: 100%;
+  font-size: variables.$fonts-size-s-xl;
+  line-height: variables.$fonts-line-height-m-xs;
+}
+
+.main-block__text {
+  text-transform: capitalize;
+  font-size: variables.$fonts-size-s-s;
+  line-height: variables.$fonts-line-height-s-xs;
+  color: variables.$fonts-color-text;
+  margin-top: 13px;
+}
