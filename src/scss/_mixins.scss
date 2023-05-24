@@ -1,0 +1,37 @@
+@use "./variables";
+//
+// Fonts
+@mixin font-main-regular {
+  font-family: variables.$f-family-main;
+  font-weight: 400;
+}
+
+@mixin font-main-stress {
+  font-family: variables.$f-family-main;
+  font-weight: 700;
+}
+
+@mixin font-secondary-regular {
+  font-family: variables.$f-family-secondary;
+  font-weight: 400;
+}
+
+@mixin font-secondary-stress {
+  font-family: variables.$f-family-secondary;
+  font-weight: 700;
+}
+
+@mixin font-secondary-stress-accent {
+  font-family: variables.$f-family-secondary;
+  font-weight: 400;
+  font-style: italic;
+}
+
+//
+// Flexbox
+@mixin flexbox($justify-content, $align-items, $flex-direction) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-direction: $flex-direction;
+}

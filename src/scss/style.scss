@@ -1,0 +1,52 @@
+//
+// IMPORTS
+@use "./reset";
+@use "./variables";
+@use "./mixins";
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(../fonts/Montserrat-Regular.woff),
+    url(../fonts/Montserrat-Regular.woff2);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url(../fonts/Montserrat-Bold.woff), url(../fonts/Montserrat-Bold.woff2);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url(../fonts/Lato-Regular.woff), url(../fonts/Lato-Regular.woff2);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Lato";
+  src: url(../fonts/Lato-Bold.woff), url(../fonts/Lato-Bold.woff2);
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Lato";
+  src: url(../fonts/Lato-BoldItalic.woff), url(../fonts/Lato-BoldItalic.woff2);
+  font-style: italic;
+  font-weight: 700;
+}
+
+//
+// BASIC styles
+// body {
+//   font-family: "Montserrat", sans-serif;
+//   color: variables.$main-headline-fcolor;
+// }
+
+// .container,
+// .headline-wrapper {
+//   @media only screen and (min-width: 768px) {
+//     width: 768px;
+//   }
+
+//   @media only screen and (min-width: 1200px) {
+//     width: 1170px;
+//   }
+// }
