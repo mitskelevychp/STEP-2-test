@@ -73,7 +73,10 @@ body {
 
 .button,
 .main-block__headline,
-.main-block__headline-text {
+.main-block__headline-text,
+.advantage__headline,
+.reviews__headline,
+.prices__headline {
   text-transform: capitalize;
 }
 
@@ -100,7 +103,6 @@ body {
 .main-block {
   height: 691px;
   @include mixins.flexbox(start, center, column);
-  // position: relative;
 
   &__background {
     background-image: url(../images/pictures/main-mobile.webp);
@@ -108,62 +110,411 @@ body {
     background-repeat: no-repeat;
     background-position-y: 400%;
     text-align: center;
-    // height: 614px;
   }
 
   &__headline-wrapper {
     padding-top: 49px;
   }
-}
 
-.main-block__headline {
-  @include mixins.font-main-stress;
-  font-size: variables.$fonts-size-xl-m;
-  line-height: variables.$fonts-line-height-l-xxl;
-  color: variables.$fonts-color-headers-main;
-}
+  &__headline {
+    @include mixins.font-main-stress;
+    font-size: variables.$fonts-size-xl-m;
+    line-height: variables.$fonts-line-height-l-xxl;
+    color: variables.$fonts-color-headers-main;
+  }
 
-.main-block__headline-text {
-  font-size: variables.$fonts-size-s-xl;
-  line-height: variables.$fonts-line-height-m-xl;
-  color: variables.$fonts-color-main;
-  margin-top: 21px;
-  height: 52px;
+  &__headline-text {
+    font-size: variables.$fonts-size-s-xl;
+    line-height: variables.$fonts-line-height-m-xl;
+    color: variables.$fonts-color-main;
+    margin-top: 21px;
+    height: 52px;
 
-  > span {
-    display: block;
-    text-transform: uppercase;
-    font-size: variables.$fonts-size-s-s;
-    line-height: variables.$fonts-line-height-s-xs;
-    color: variables.$fonts-color-text;
-    margin-top: 17px;
+    > span {
+      display: block;
+      font-size: variables.$fonts-size-s-s;
+      line-height: variables.$fonts-line-height-s-xs;
+      color: variables.$fonts-color-text;
+      margin-top: 17px;
+    }
+  }
+
+  &__button-wrapper {
+    height: 78px;
+    margin-top: 421px;
   }
 }
 
-.main-block__button-wrapper {
-  width: 290px;
-  height: 78px;
-  margin-top: 421px;
-  // top: 670px;
-  // left: 15px;
-  // transform: ();
-  // @include mixins.flexbox(center, center, column);
+.main-block__background,
+.repo-details-section,
+.advantages__headline,
+.advantage__headline,
+.advantage__text,
+.reviews__headline,
+.reviews__review__text,
+.reviews__text,
+.prices__headline {
+  text-align: center;
+}
+
+.main-block__headline-text > span,
+.repo-details-section__header,
+.button--prices,
+.prices__price__headline,
+.block-text--prices {
+  text-transform: uppercase;
 }
 
 .button--main-block {
-  // position: absolute;
-  // width: 290px;
+  width: 290px;
   height: 45px;
-  width: 100%;
-  // height: 100%;
   font-size: variables.$fonts-size-s-xl;
   line-height: variables.$fonts-line-height-m-xs;
 }
 
-.main-block__text {
+.block-text {
   text-transform: capitalize;
   font-size: variables.$fonts-size-s-s;
   line-height: variables.$fonts-line-height-s-xs;
   color: variables.$fonts-color-text;
   margin-top: 13px;
+}
+
+//
+// Repository details block - "Revolutionary editor"
+.repo-details-section,
+.advantages-wrapper,
+.advantages,
+.advantage {
+  @include mixins.flexbox(space-between, center, column);
+}
+
+.repo-details-section {
+  margin: 47px 0px 88px;
+
+  &__header {
+    @include mixins.font-main-stress;
+    font-size: variables.$fonts-size-m-l;
+    line-height: variables.$fonts-line-height-m-xxxl;
+    color: variables.$fonts-color-headers-secondary;
+  }
+
+  &__text {
+    width: 276px;
+    margin-top: 21px;
+    margin-bottom: 22px;
+    @include mixins.font-secondary-regular;
+    font-size: variables.$fonts-size-s-s;
+    line-height: variables.$fonts-line-height-m-xs;
+    color: variables.$fonts-color-headers-small;
+  }
+
+  &__details {
+    flex-wrap: wrap;
+    @include mixins.flexbox(center, center, row);
+    width: 251px;
+    height: 88px;
+    gap: 0px 10px;
+  }
+}
+
+.repo-details,
+.repo-details__icon-wrapper {
+  @include mixins.flexbox(space-between, center, row);
+}
+
+.repo-details {
+  width: 120px;
+  height: 26px;
+  border: 1px solid rgba(31, 35, 40, 0.15);
+  border-radius: 6px;
+
+  &__icon-wrapper {
+    border-right: 1px solid rgba(31, 35, 40, 0.15);
+    background: linear-gradient(hsl(0, 0%, 99%), hsl(240, 3%, 94%));
+    padding-left: 8px;
+    width: 70px;
+  }
+
+  &__text {
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    font-size: variables.$fonts-size-s-xs;
+    line-height: variables.$fonts-line-height-m-xs;
+    text-align: center;
+    width: 50px;
+  }
+}
+
+.repo-details__icon-wrapper,
+.repo-details_tex {
+  height: 100%;
+}
+
+//
+// Advantages block - "Here is what you get"
+.advantages-wrapper {
+  height: 1530px;
+}
+
+.advantages {
+  &__headline {
+    width: 230px;
+    @include mixins.font-main-stress;
+    font-size: variables.$fonts-size-l-m;
+    line-height: variables.$fonts-line-height-l-m;
+    color: variables.$fonts-color-main;
+    margin-bottom: 36px;
+  }
+
+  &__headline::before {
+    content: "<";
+  }
+
+  &__headline::after {
+    content: ">";
+  }
+}
+
+.advantage {
+  width: 274px;
+  margin-bottom: 37px;
+
+  &__icon {
+    width: 111px;
+    height: 64px;
+    margin-bottom: 25px;
+
+    &--second {
+      width: 90px;
+      height: 80px;
+    }
+
+    &--third {
+      width: 60px;
+      height: 84px;
+    }
+
+    &--fourth {
+      width: 71px;
+      height: 71px;
+    }
+  }
+
+  &__headline {
+    margin-bottom: 14px;
+    @include mixins.font-main-regular;
+    font-size: variables.$fonts-size-s-l;
+    line-height: variables.$fonts-line-height-s-m;
+    color: variables.$fonts-color-headers-small;
+  }
+
+  &__text {
+    @include mixins.font-secondary-regular;
+    font-size: variables.$fonts-size-s-s;
+    line-height: variables.$fonts-line-height-m-s;
+    color: variables.$fonts-color-text;
+  }
+}
+
+.advantages__image-wrapper {
+  margin: 21px 0px 6px;
+  width: 317px;
+  height: 381px;
+  padding-left: 19px;
+  background-image: url(../images/pictures/example-code.webp);
+  background-repeat: no-repeat;
+  background-size: 163%;
+}
+
+//
+// Reviews block - "People Are Talking About Fork"
+.reviews-background,
+.prices-background {
+  background-color: variables.$bg-color-page-block-dark;
+}
+
+.reviews-background {
+  padding-top: 15px;
+}
+
+.reviews-wrapper {
+  padding: 43px 0px 5px;
+  @include mixins.flexbox(center, center, column);
+
+  background-image: url(../images/pictures/backgroubd-first.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 0%;
+}
+
+.reviews__headline {
+  margin-bottom: 53px;
+  @include mixins.font-main-stress;
+  font-size: variables.$fonts-size-l-l;
+  line-height: variables.$fonts-line-height-l-xxl;
+  color: variables.$fonts-color-headers-main;
+}
+
+.reviews {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 41px;
+  padding: 0px 15px;
+}
+
+.reviews__review {
+  @include mixins.flexbox(space-between, center, column);
+}
+
+.reviews__review__image {
+  width: 165px;
+  // margin-bottom: 33px;
+  margin-bottom: 22px;
+
+  &--second {
+    width: 148px;
+    // margin-bottom: 29px;
+  }
+
+  &--third {
+    width: 64px;
+    // margin-bottom: 22px;
+  }
+
+  &--fourth {
+    width: 225px;
+    // margin-bottom: 33px;
+  }
+
+  &--fiveth {
+    width: 166px;
+    // margin-bottom: 28px;
+  }
+
+  &--sixth {
+    width: 108px;
+    // margin-bottom: 24px;
+  }
+}
+
+.reviews__review__text {
+  width: 270px;
+  @include mixins.font-secondary-stress-accent;
+  font-size: variables.$fonts-size-s-l;
+  line-height: variables.$fonts-line-height-m-xl;
+  color: variables.$fonts-color-headers-main;
+}
+
+.reviews__text-wrapper {
+  @include mixins.flexbox(center, center, row);
+}
+
+.reviews__text {
+  @include mixins.font-secondary-regular;
+  font-size: variables.$fonts-size-s-s;
+  line-height: variables.$fonts-line-height-m-s;
+  color: variables.$fonts-color-text-decor;
+  margin: 29px 0px 22px;
+  width: 251px;
+}
+
+.reviews__decor-line {
+  width: 245px;
+  border-bottom: solid 2px variables.$bg-color-decor-strip;
+}
+
+//
+// Price block - "Fork Subscription Pricing"
+.prices__headline {
+  @include mixins.font-main-stress;
+  font-size: variables.$fonts-size-m-xl;
+  line-height: variables.$fonts-line-height-l-l;
+  color: variables.$fonts-color-headers-main;
+  padding-bottom: 20px;
+  // TODO ^^^^^ Pixel perfect!! ^^^^^
+}
+
+.prices {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 18px;
+  padding-bottom: 12px;
+}
+
+.prices__price {
+  @include mixins.flexbox(space-between, center, column);
+  background-color: variables.$bg-color-block;
+}
+
+.prices__price__headline {
+  @include mixins.flexbox(center, center, row);
+  width: 100%;
+  height: 91px;
+  background-color: variables.$bg-color-block-header;
+  @include mixins.font-main-regular;
+  font-size: variables.$fonts-size-m-m;
+  line-height: variables.$fonts-line-height-m-xl;
+  color: variables.$fonts-color-headers-main;
+}
+
+.prices__price__text {
+  @include mixins.flexbox(space-between, center, column);
+  padding: 30px 0px 38px;
+}
+
+.prices__price__number {
+  margin-bottom: 20px;
+  @include mixins.font-main-stress;
+  font-size: variables.$fonts-size-xxl-s;
+  line-height: variables.$fonts-line-height-xl-m;
+  color: variables.$fonts-color-headers-main;
+
+  & > span {
+    @include mixins.font-main-regular;
+  }
+}
+
+.prices__price__decor-line {
+  width: 60px;
+  border-bottom: solid 5px variables.$fonts-color-main;
+  margin: 38px 0px 30px;
+}
+
+.button--prices {
+  width: 163px;
+  height: 45px;
+  margin-top: 39px;
+  background-color: variables.$bg-color-block-button;
+  color: variables.$fonts-color-headers-main;
+  @include mixins.font-main-regular;
+}
+
+.block-text--prices {
+  text-transform: uppercase;
+  color: variables.$fonts-color-headers-main;
+  margin-top: 0px;
+}
+
+.prices__price__options {
+  @include mixins.font-main-regular;
+  font-size: variables.$fonts-size-s-l;
+  line-height: variables.$fonts-line-height-s-xl;
+  color: variables.$fonts-color-headers-main;
+}
+
+.prices__price__options--margin {
+  margin-bottom: 17px;
+}
+
+.prices__price--not-accent {
+  margin: 0px 21px;
+}
+
+.prices__price--accent {
+  background-color: variables.$bg-color-block-accent;
+}
+
+.prices__price__headline--accent {
+  background-color: variables.$bg-color-block-accent-header;
 }

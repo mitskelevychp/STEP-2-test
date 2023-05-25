@@ -9,8 +9,9 @@ $fonts-color-headers-main: hsla(0, 0%, 100%, 1);
 $fonts-color-text: hsla(208, 8%, 55%, 1);
 $fonts-color-headers-secondary: hsla(258, 11%, 41%, 1);
 $fonts-color-headers-small: hsla(0, 0%, 20%, 1);
-$fonts-color-tex-decor: hsla(291, 10%, 61%, 1);
+$fonts-color-text-decor: hsla(291, 10%, 61%, 1);
 // -size
+$fonts-size-s-xs: 12px;
 $fonts-size-s-s: 14px;
 $fonts-size-s-m: 15px;
 $fonts-size-s-l: 16px;
@@ -58,10 +59,14 @@ $fonts-line-height-xl-xxxl: 90px;
 //
 // Background color
 $bg-color-page-main: hsla(257, 21%, 59%, 1);
-$bg-color-page-block: hsla(0, 0%, 96%, 1);
-$bg-color-block-accent: hsla(295, 20%, 24%, 1);
+$bg-color-page-block-light: hsla(0, 0%, 96%, 1);
+$bg-color-page-block-dark: hsl(291, 14%, 27%);
+$bg-color-block: hsla(0, 0%, 100%, 0.11);
+$bg-color-block-header: hsla(0, 0%, 100%, 0.06);
+$bg-color-block-button: hsla(0, 0%, 100%, 0.15);
+$bg-color-block-accent-header: hsla(0, 0%, 0%, 0.11);
+$bg-color-block-accent: hsla(295, 20%, 24%, 0.84);
 $bg-color-decor-strip: hsla(292, 8%, 37%, 1);
-$bg-color-decor-dark: hsla(0, 0%, 0%, 1);
 $bg-color-header-mobile: hsla(255, 5%, 16%, 1);
 $bg-color-menu-mobile: hsl(0, 0%, 20%);
 $bg-color-menu-mobile-decor: hsl(0, 0%, 23%);
