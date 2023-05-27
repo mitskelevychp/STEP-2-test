@@ -46,31 +46,141 @@ body {
   @media only screen and (max-width: 320px) {
     min-width: 320px;
   }
+
+  @media only screen and (min-width: 1201px) {
+    // width: 1200px;
+    min-width: 1200px;
+  }
 }
 
 //
 // Header
-
-.header,
-.header-wrapper {
-  @include mixins.flexbox(space-between, center, row);
-}
-
 .header {
-  width: 100%;
-  padding: 0px 5px 0px 6px;
+  @include mixins.flexbox(space-between, center, row);
+  flex-wrap: wrap;
+  // width: 100%;
+  padding: 0px 5px 0px 5px;
+
+  @media only screen and (max-width: 480px) {
+    height: 103px;
+  }
+  @media only screen and (min-width: 481px) {
+    // height: 82px;
+    padding: 22px 10px 14px 10px;
+  }
+  @media only screen and (min-width: 993px) {
+    padding: 29.5px 10px 29.5px 10px;
+    position: relative;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  @media only screen and (min-width: 1201px) {
+    width: 1200px;
+    margin: 0 auto;
+  }
 
   &-wrapper {
-    height: 103px;
     background-color: variables.$bg-color-header-mobile;
+
+    @media only screen and (min-width: 993px) {
+      background-color: variables.$bg-color-laptop-jeader;
+    }
+  }
+
+  &__logo-wrapper {
+    @include mixins.flexbox(space-between, center, row);
   }
 
   &__logo {
+    display: block;
     width: 43px;
     height: 41px;
+    background-image: url("../images/logo/Logo.webp");
+  }
+
+  &__logo:hover {
+    background-image: url("../images/logo/logo-hover.webp");
+  }
+
+  &__logo-text {
+    margin-left: 17px;
+    @include mixins.font-secondary-stress;
+    font-size: variables.$fonts-size-m-m;
+    line-height: variables.$fonts-line-height-s-m;
+    color: variables.$fonts-color-main;
+
+    @media only screen and (max-width: 480px) {
+      display: none;
+    }
+  }
+
+  &__logo-text:hover {
+    color: variables.$fonts-color-headers-main;
+  }
+
+  &__button {
+    @media only screen and (min-width: 993px) {
+      order: 3;
+    }
+  }
+
+  &__button:hover {
+    background-color: variables.$bg-color-page-hover;
+    border: 1px solid variables.$fonts-color-main;
+
+    & > p {
+      color: variables.$fonts-color-main;
+    }
   }
 }
 
+.header__nav-tablet-wrapper {
+  @include mixins.flexbox(center, center, row);
+  width: 100%;
+  padding-top: 23px;
+
+  @media only screen and (max-width: 480px) {
+    display: none;
+  }
+  @media only screen and (min-width: 993px) {
+    width: 527px;
+    order: 2;
+    padding-top: 0px;
+  }
+}
+
+.header__nav-tablet {
+  @include mixins.flexbox(space-between, center, row);
+  width: 517px;
+  @include mixins.font-main-stress;
+  font-size: variables.$fonts-size-s-l;
+  line-height: variables.$fonts-line-height-s-xl;
+  color: variables.$fonts-color-main;
+
+  & > li {
+    opacity: 0.5;
+
+    @media only screen and (min-width: 993px) {
+      opacity: 1;
+    }
+  }
+
+  & > li:hover {
+    color: variables.$fonts-color-headers-main;
+    opacity: 1;
+  }
+
+  @media only screen and (min-width: 481px) {
+    right: 191px;
+  }
+
+  @media only screen and (min-width: 993px) {
+    position: absolute;
+    line-height: variables.$fonts-line-height-s-l;
+  }
+}
+
+.header__nav-tablet,
 .button,
 .main-block__headline,
 .main-block__headline-text,
@@ -90,9 +200,18 @@ body {
   @include mixins.font-main-stress;
   font-size: variables.$fonts-size-s-m;
   line-height: variables.$fonts-line-height-s-s;
+
+  @media only screen and (min-width: 481px) {
+    width: 145px;
+    height: 38px;
+  }
 }
 
 .header__nav-wrapper {
+  @media only screen and (min-width: 481px) {
+    display: none;
+  }
+
   width: 26px;
   height: 21px;
   background-color: white;
@@ -101,19 +220,39 @@ body {
 //
 // Main block
 .main-block {
-  height: 691px;
-  @include mixins.flexbox(start, center, column);
+  // height: 691px;
+  height: 100%;
+  background-image: url(../images/pictures/main.webp);
+  background-position-x: center;
+  background-repeat: no-repeat;
+  background-position-y: 79%;
+  height: 630px;
+  // background-size: 100%;
 
-  &__background {
-    background-image: url(../images/pictures/main-mobile.webp);
-    background-position-x: center;
-    background-repeat: no-repeat;
-    background-position-y: 400%;
-    text-align: center;
+  @media only screen and (max-width: 320px) {
+    background-size: 448%;
+  }
+  @media only screen and (min-width: 481px) {
+    height: 682px;
+    background-position-y: 95%;
+  }
+  @media only screen and (min-width: 993px) {
+    height: 700px;
+    background-position-y: 100%;
+  }
+  @media only screen and (min-width: 1201px) {
+    background-size: 101%;
+    // TODO
+    // height: 630px;
+    background-position-y: 79%;
   }
 
   &__headline-wrapper {
     padding-top: 49px;
+
+    @media only screen and (min-width: 481px) {
+      padding-top: 69px;
+    }
   }
 
   &__headline {
@@ -121,6 +260,15 @@ body {
     font-size: variables.$fonts-size-xl-m;
     line-height: variables.$fonts-line-height-l-xxl;
     color: variables.$fonts-color-headers-main;
+
+    @media only screen and (min-width: 481px) {
+      font-size: variables.$fonts-size-xxl-m;
+      line-height: variables.$fonts-line-height-xl-l;
+    }
+    @media only screen and (min-width: 993px) {
+      font-size: variables.$fonts-size-xxl-l;
+      line-height: variables.$fonts-line-height-xl-xl;
+    }
   }
 
   &__headline-text {
@@ -130,22 +278,59 @@ body {
     margin-top: 21px;
     height: 52px;
 
+    @media only screen and (min-width: 481px) {
+      @include mixins.font-secondary-regular;
+      font-size: variables.$fonts-size-m-m;
+    }
+
+    @media only screen and (min-width: 993px) {
+      font-size: variables.$fonts-size-l-s;
+      line-height: variables.$fonts-line-height-l-xs;
+    }
+
     > span {
       display: block;
       font-size: variables.$fonts-size-s-s;
       line-height: variables.$fonts-line-height-s-xs;
       color: variables.$fonts-color-text;
       margin-top: 17px;
+
+      @media only screen and (min-width: 481px) {
+        margin-top: 19px;
+        @include mixins.font-main-regular;
+      }
+      @media only screen and (min-width: 993px) {
+        font-size: variables.$fonts-size-s-l;
+        line-height: variables.$fonts-line-height-s-m;
+      }
     }
   }
 
   &__button-wrapper {
+    background-color: white;
     height: 78px;
-    margin-top: 421px;
+    margin-top: -18px;
+    position: relative;
+
+    @media only screen and (min-width: 481px) {
+      margin-top: 0px;
+    }
+  }
+
+  &__button-wrapper a {
+    position: absolute;
+    left: 50%;
+    top: -22.5px;
+    transform: translate(-50%);
+
+    @media only screen and (min-width: 481px) {
+      top: -31px;
+    }
   }
 }
 
-.main-block__background,
+.main-block,
+.block-text,
 .repo-details-section,
 .advantages__headline,
 .advantage__headline,
@@ -157,6 +342,7 @@ body {
   text-align: center;
 }
 
+.header__logo-text,
 .main-block__headline-text > span,
 .repo-details-section__header,
 .button--prices,
@@ -170,6 +356,21 @@ body {
   height: 45px;
   font-size: variables.$fonts-size-s-xl;
   line-height: variables.$fonts-line-height-m-xs;
+
+  &:hover {
+    // border: 2px solid variables.$fonts-color-main;
+    border-width: 2px;
+  }
+
+  @media only screen and (min-width: 481px) {
+    width: 390px;
+    height: 62px;
+    font-size: variables.$fonts-size-m-s;
+    line-height: variables.$fonts-line-height-m-l;
+  }
+  @media only screen and (min-width: 993px) {
+    line-height: variables.$fonts-line-height-m-m;
+  }
 }
 
 .block-text {
@@ -177,7 +378,19 @@ body {
   font-size: variables.$fonts-size-s-s;
   line-height: variables.$fonts-line-height-s-xs;
   color: variables.$fonts-color-text;
-  margin-top: 13px;
+}
+
+.block-text--under-main-block {
+  padding-top: 36.5px;
+
+  @media only screen and (min-width: 481px) {
+    line-height: variables.$fonts-line-height-s-m;
+    padding-top: 53.5px;
+  }
+  @media only screen and (min-width: 993px) {
+    line-height: variables.$fonts-line-height-s-s;
+    padding-top: 54px;
+  }
 }
 
 //
@@ -192,29 +405,51 @@ body {
 .repo-details-section {
   margin: 47px 0px 88px;
 
+  @media only screen and (min-width: 481px) {
+    line-height: variables.$fonts-line-height-s-m;
+    margin: 88px 0px 163px;
+  }
+  @media only screen and (min-width: 993px) {
+    line-height: variables.$fonts-line-height-s-s;
+    margin-top: 60.5px;
+  }
+
   &__header {
     @include mixins.font-main-stress;
     font-size: variables.$fonts-size-m-l;
     line-height: variables.$fonts-line-height-m-xxxl;
     color: variables.$fonts-color-headers-secondary;
+
+    @media only screen and (min-width: 481px) {
+      font-size: variables.$fonts-size-xl-s;
+      line-height: variables.$fonts-line-height-l-l;
+    }
   }
 
   &__text {
-    width: 276px;
-    margin-top: 21px;
-    margin-bottom: 22px;
+    padding: 21px 23px 22px;
     @include mixins.font-secondary-regular;
     font-size: variables.$fonts-size-s-s;
     line-height: variables.$fonts-line-height-m-xs;
     color: variables.$fonts-color-headers-small;
+
+    @media only screen and (min-width: 481px) {
+      padding: 28px 39px 41px;
+      font-size: variables.$fonts-size-m-s;
+      line-height: variables.$fonts-line-height-l-s;
+    }
   }
 
   &__details {
     flex-wrap: wrap;
     @include mixins.flexbox(center, center, row);
-    width: 251px;
+    // width: 251px;
     height: 88px;
     gap: 0px 10px;
+
+    @media only screen and (min-width: 481px) {
+      height: 0px;
+    }
   }
 }
 
@@ -348,137 +583,160 @@ body {
   background-position-y: 0%;
 }
 
-.reviews__headline {
-  margin-bottom: 53px;
-  @include mixins.font-main-stress;
-  font-size: variables.$fonts-size-l-l;
-  line-height: variables.$fonts-line-height-l-xxl;
-  color: variables.$fonts-color-headers-main;
-}
-
 .reviews {
   display: grid;
   grid-template-columns: 1fr;
   grid-row-gap: 41px;
   padding: 0px 15px;
+
+  &__headline {
+    margin-bottom: 53px;
+    @include mixins.font-main-stress;
+    font-size: variables.$fonts-size-l-l;
+    line-height: variables.$fonts-line-height-l-xxl;
+    color: variables.$fonts-color-headers-main;
+  }
+
+  &__text-wrapper {
+    @include mixins.flexbox(center, center, row);
+  }
+
+  &__text {
+    @include mixins.font-secondary-regular;
+    font-size: variables.$fonts-size-s-s;
+    line-height: variables.$fonts-line-height-m-s;
+    color: variables.$fonts-color-text-decor;
+    margin: 29px 0px 22px;
+    width: 251px;
+  }
+
+  &__decor-line {
+    width: 245px;
+    border-bottom: solid 2px variables.$bg-color-decor-strip;
+  }
 }
 
 .reviews__review {
   @include mixins.flexbox(space-between, center, column);
-}
 
-.reviews__review__image {
-  width: 165px;
-  // margin-bottom: 33px;
-  margin-bottom: 22px;
-
-  &--second {
-    width: 148px;
-    // margin-bottom: 29px;
-  }
-
-  &--third {
-    width: 64px;
-    // margin-bottom: 22px;
-  }
-
-  &--fourth {
-    width: 225px;
+  &__image {
+    width: 165px;
     // margin-bottom: 33px;
+    margin-bottom: 22px;
+
+    &--second {
+      width: 148px;
+      // margin-bottom: 29px;
+    }
+
+    &--third {
+      width: 64px;
+      // margin-bottom: 22px;
+    }
+
+    &--fourth {
+      width: 225px;
+      // margin-bottom: 33px;
+    }
+
+    &--fiveth {
+      width: 166px;
+      // margin-bottom: 28px;
+    }
+
+    &--sixth {
+      width: 108px;
+      // margin-bottom: 24px;
+    }
   }
 
-  &--fiveth {
-    width: 166px;
-    // margin-bottom: 28px;
+  &__text {
+    width: 270px;
+    @include mixins.font-secondary-stress-accent;
+    font-size: variables.$fonts-size-s-l;
+    line-height: variables.$fonts-line-height-m-xl;
+    color: variables.$fonts-color-headers-main;
   }
-
-  &--sixth {
-    width: 108px;
-    // margin-bottom: 24px;
-  }
-}
-
-.reviews__review__text {
-  width: 270px;
-  @include mixins.font-secondary-stress-accent;
-  font-size: variables.$fonts-size-s-l;
-  line-height: variables.$fonts-line-height-m-xl;
-  color: variables.$fonts-color-headers-main;
-}
-
-.reviews__text-wrapper {
-  @include mixins.flexbox(center, center, row);
-}
-
-.reviews__text {
-  @include mixins.font-secondary-regular;
-  font-size: variables.$fonts-size-s-s;
-  line-height: variables.$fonts-line-height-m-s;
-  color: variables.$fonts-color-text-decor;
-  margin: 29px 0px 22px;
-  width: 251px;
-}
-
-.reviews__decor-line {
-  width: 245px;
-  border-bottom: solid 2px variables.$bg-color-decor-strip;
 }
 
 //
 // Price block - "Fork Subscription Pricing"
-.prices__headline {
-  @include mixins.font-main-stress;
-  font-size: variables.$fonts-size-m-xl;
-  line-height: variables.$fonts-line-height-l-l;
-  color: variables.$fonts-color-headers-main;
-  padding-bottom: 20px;
-  // TODO ^^^^^ Pixel perfect!! ^^^^^
-}
-
 .prices {
   display: grid;
   grid-template-columns: 1fr;
   grid-row-gap: 18px;
   padding-bottom: 12px;
+
+  &__headline {
+    @include mixins.font-main-stress;
+    font-size: variables.$fonts-size-m-xl;
+    line-height: variables.$fonts-line-height-l-l;
+    color: variables.$fonts-color-headers-main;
+    padding-bottom: 20px;
+    // TODO ^^^^^ Pixel perfect!! ^^^^^
+  }
 }
 
 .prices__price {
   @include mixins.flexbox(space-between, center, column);
   background-color: variables.$bg-color-block;
-}
 
-.prices__price__headline {
-  @include mixins.flexbox(center, center, row);
-  width: 100%;
-  height: 91px;
-  background-color: variables.$bg-color-block-header;
-  @include mixins.font-main-regular;
-  font-size: variables.$fonts-size-m-m;
-  line-height: variables.$fonts-line-height-m-xl;
-  color: variables.$fonts-color-headers-main;
-}
-
-.prices__price__text {
-  @include mixins.flexbox(space-between, center, column);
-  padding: 30px 0px 38px;
-}
-
-.prices__price__number {
-  margin-bottom: 20px;
-  @include mixins.font-main-stress;
-  font-size: variables.$fonts-size-xxl-s;
-  line-height: variables.$fonts-line-height-xl-m;
-  color: variables.$fonts-color-headers-main;
-
-  & > span {
+  &__headline {
+    @include mixins.flexbox(center, center, row);
+    width: 100%;
+    height: 91px;
+    background-color: variables.$bg-color-block-header;
     @include mixins.font-main-regular;
+    font-size: variables.$fonts-size-m-m;
+    line-height: variables.$fonts-line-height-m-xl;
+    color: variables.$fonts-color-headers-main;
   }
-}
 
-.prices__price__decor-line {
-  width: 60px;
-  border-bottom: solid 5px variables.$fonts-color-main;
-  margin: 38px 0px 30px;
+  &__text {
+    @include mixins.flexbox(space-between, center, column);
+    padding: 30px 0px 38px;
+  }
+
+  &__number {
+    margin-bottom: 20px;
+    @include mixins.font-main-stress;
+    font-size: variables.$fonts-size-xxl-s;
+    line-height: variables.$fonts-line-height-xl-m;
+    color: variables.$fonts-color-headers-main;
+
+    & > span {
+      @include mixins.font-main-regular;
+    }
+  }
+
+  &__decor-line {
+    width: 60px;
+    border-bottom: solid 5px variables.$fonts-color-main;
+    margin: 38px 0px 30px;
+  }
+
+  &__options {
+    @include mixins.font-main-regular;
+    font-size: variables.$fonts-size-s-l;
+    line-height: variables.$fonts-line-height-s-xl;
+    color: variables.$fonts-color-headers-main;
+  }
+
+  &__options--margin {
+    margin-bottom: 17px;
+  }
+
+  &--not-accent {
+    margin: 0px 21px;
+  }
+
+  &--accent {
+    background-color: variables.$bg-color-block-accent;
+  }
+
+  &__headline--accent {
+    background-color: variables.$bg-color-block-accent-header;
+  }
 }
 
 .button--prices {
@@ -493,28 +751,4 @@ body {
 .block-text--prices {
   text-transform: uppercase;
   color: variables.$fonts-color-headers-main;
-  margin-top: 0px;
-}
-
-.prices__price__options {
-  @include mixins.font-main-regular;
-  font-size: variables.$fonts-size-s-l;
-  line-height: variables.$fonts-line-height-s-xl;
-  color: variables.$fonts-color-headers-main;
-}
-
-.prices__price__options--margin {
-  margin-bottom: 17px;
-}
-
-.prices__price--not-accent {
-  margin: 0px 21px;
-}
-
-.prices__price--accent {
-  background-color: variables.$bg-color-block-accent;
-}
-
-.prices__price__headline--accent {
-  background-color: variables.$bg-color-block-accent-header;
 }

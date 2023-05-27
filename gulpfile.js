@@ -29,7 +29,7 @@ function fonts() {
 async function images() {
   const imagemin = await import("gulp-imagemin");
 
-  return src("src/images-src/**/*")
+  return src("src/images-src/**/*", "!src/images-src/**/*.svg")
     .pipe(newer("src/images"))
     .pipe(imagemin.default())
     .pipe(webp())
@@ -86,12 +86,13 @@ function cleanDist() {
   return src("dist").pipe(clean());
 }
 
+//      "src/**/*.html" => "src/index.html",
 function building() {
   return src(
     [
       "src/css/*.css",
       "src/js/main.min.js",
-      "src/**/*.html",
+      "src/index.html",
       "src/images/**/*.*",
       "src/fonts/*.woff",
       "src/fonts/*.woff2",

@@ -11,38 +11,42 @@
   <body>
     <header class="header-wrapper container">
       <div class="header">
-        <a href="#"
-          ><img
-            src="../images/logo/Logo.webp"
-            alt="Forkio logo"
-            class="header__logo"
-        /></a>
-        <a href="#"><div class="button">buy now</div></a>
+        <div href="#" class="header__logo-wrapper">
+          <a href="#"><div class="header__logo"></div></a>
+          <a href="#" class="header__logo-text">forkio</a>
+        </div>
+        <a href="#" class="button header__button"><p>buy now</p></a>
+        <nav class="header__nav-tablet-wrapper">
+          <ul class="header__nav-tablet">
+            <li><a href="#">overview</a></li>
+            <li><a href="#">about fork</a></li>
+            <li><a href="#">buying options</a></li>
+            <li><a href="#">support</a></li>
+          </ul>
+        </nav>
         <div class="header__nav-wrapper"></div>
       </div>
     </header>
     <main>
-      <div class="main-block__background">
-        <div class="main-block container">
-          <div class="main-block__headline-wrapper">
-            <h1 class="main-block__headline">Fork app</h1>
-            <p class="main-block__headline-text">
-              A real gamechanger in the world of web-development<span
-                >v. 2.8 for Mac and Windows</span
-              >
-            </p>
-          </div>
-          <div class="main-block__button-wrapper">
-            <a href="#"
-              ><div class="button button--main-block">
-                Download for free now
-              </div></a
+      <div class="main-block container">
+        <div class="main-block__headline-wrapper">
+          <h1 class="main-block__headline">Fork app</h1>
+          <p class="main-block__headline-text">
+            A real gamechanger in the world of web-development<span
+              >v. 2.8 for Mac and Windows</span
             >
-            <p class="block-text">Unlimited 30-days trial period</p>
-          </div>
+          </p>
         </div>
       </div>
-      <div class="repo-details-section container">
+      <div class="main-block__button-wrapper container">
+        <a href="#" class="button header__button button--main-block"
+          ><p>Download for free now</p></a
+        >
+        <p class="block-text block-text--under-main-block">
+          Unlimited 30-days trial period
+        </p>
+      </div>
+      <div class="repo-details-section">
         <h2 class="repo-details-section__header">Revolutionary editor</h2>
         <p class="repo-details-section__text">
           Aenean cursus imperdiet nisl id fermentum. Aliquam pharetra dui

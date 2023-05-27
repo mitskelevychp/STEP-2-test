@@ -59,14 +59,21 @@ $fonts-line-height-xl-xxxl: 90px;
 //
 // Background color
 $bg-color-page-main: hsla(257, 21%, 59%, 1);
+$bg-color-page-hover: hsla(0, 0%, 100%, 1);
+// Header
+$bg-color-laptop-jeader: hsl(252, 100%, 1%);
+// Here is what you get
 $bg-color-page-block-light: hsla(0, 0%, 96%, 1);
+// People are talking
 $bg-color-page-block-dark: hsl(291, 14%, 27%);
+// + Price
 $bg-color-block: hsla(0, 0%, 100%, 0.11);
 $bg-color-block-header: hsla(0, 0%, 100%, 0.06);
 $bg-color-block-button: hsla(0, 0%, 100%, 0.15);
 $bg-color-block-accent-header: hsla(0, 0%, 0%, 0.11);
 $bg-color-block-accent: hsla(295, 20%, 24%, 0.84);
 $bg-color-decor-strip: hsla(292, 8%, 37%, 1);
+// Mobile
 $bg-color-header-mobile: hsla(255, 5%, 16%, 1);
 $bg-color-menu-mobile: hsl(0, 0%, 20%);
 $bg-color-menu-mobile-decor: hsl(0, 0%, 23%);
@@ -76,7 +83,7 @@ $bg-color-menu-mobile-decor: hsl(0, 0%, 23%);
 $media-mobile: 320px; /* min-width; 320 - 480, not less than 320px */
 $media-tablet: 481px; /* min-width; 481 - 992 */
 $media-laptop: 993px; /* min-width: 993 - 1200 */
-$media-laptop-large: 1200px; /* min-width; if more than 1200px - content = 1200px + center of the page */
+$media-laptop-large: 1201px; /* min-width; if more than 1200px - content = 1200px + on the center of the page */
 
 //
 // Padding
