@@ -36,6 +36,8 @@ _____________________________
 файлы и подключать файлы в шапке сайта с помощью атрибута media:
 <link rel="stylesheet" href="tablet.css" media="(min-width: 700px)">
 
+мин 320px сделать как контейнер - или в действующий контейнер добавить @media, или сделать новій
+
 __________________________
 Бургер-меню:
 const menuButton = document.querySelector('.menu__burger');
