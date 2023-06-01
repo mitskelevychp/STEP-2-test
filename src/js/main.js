@@ -1,10 +1,7 @@
-let mobileMenuIcon = document.querySelector(
-  ".header__nav-wrapper"
-); /* toggleButton */
-
+let mobileMenuIcon = document.querySelector(".header__nav-wrapper");
 let burgerMenu = document.querySelector(".header__nav__icon");
 let crossIcon = document.querySelector(".header__nav__cross-icon");
-let mobileMenu = document.querySelector(".header__nav"); /* menu */
+let mobileMenu = document.querySelector(".header__nav");
 let status = false;
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -19,7 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("click", function (event) {
     let targetElement = event.target;
     if (
-      !mobileMenu.contains(targetElement) &&
+      // ! ?
+      //   !mobileMenu.contains(targetElement) &&
       !mobileMenuIcon.contains(targetElement)
     ) {
       closeMenu();
@@ -29,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
   mobileMenu.addEventListener("click", function (event) {
     let targetElement = event.target;
     if (
-      !targetElement.classList.contains("header__nav__item") ||
+      //   !targetElement.classList.contains("header__nav__item") ||
       !targetElement.classList.contains("header__nav")
     ) {
       closeMenu();
@@ -50,35 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
     mobileMenu.classList.remove("header__nav--active");
   }
 });
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   mobileMenuIcon.addEventListener("click", (event) => {
-//     if (status) {
-//       burgerMenu.classList.remove("header__nav__icon--passive");
-//       crossIcon.classList.remove("header__nav__cross-icon--active");
-//       mobileMenu.classList.remove("header__nav--active");
-//       status = false;
-//     } else {
-//       status = true;
-//       burgerMenu.classList.add("header__nav__icon--passive");
-//       crossIcon.classList.add("header__nav__cross-icon--active");
-//       mobileMenu.classList.add("header__nav--active");
-//     }
-//   });
-
-//   document.addEventListener("click", function (event) {
-//     let targetElement = event.target;
-//     if (
-//       !mobileMenu.contains(targetElement) &&
-//       !mobileMenuIcon.contains(targetElement)
-//     ) {
-//       burgerMenu.classList.remove("header__nav__icon--passive");
-//       crossIcon.classList.remove("header__nav__cross-icon--active");
-//       mobileMenu.classList.remove("header__nav--active");
-//       status = false;
-//     }
-//   });
-// });
 
 // mobileMenuIcon.addEventListener("click", (event) => {
 //   if (status) {
