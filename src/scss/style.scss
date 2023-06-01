@@ -224,10 +224,6 @@ body {
   display: block;
 }
 
-// .header__nav__item--active {
-//   display: none;
-// }
-
 .header__nav__item {
   @include mixins.flexbox(flex-start, center, row);
   height: 91px;
@@ -246,7 +242,7 @@ body {
     visibility: hidden;
   }
 
-  &:hover a {
+  &:hover p {
     color: variables.$fonts-color-main;
   }
 
