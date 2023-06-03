@@ -1,5 +1,5 @@
 let mobileMenuIcon = document.querySelector(".header__nav-wrapper");
-let burgerMenu = document.querySelector(".header__nav__icon");
+let burgerMenu = document.querySelector(".header__nav__hamburger-icon");
 let crossIcon = document.querySelector(".header__nav__cross-icon");
 let mobileMenu = document.querySelector(".header__nav");
 let status = false;
@@ -36,16 +36,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function openMenu() {
     status = true;
-    burgerMenu.classList.add("header__nav__icon--passive");
-    crossIcon.classList.add("header__nav__cross-icon--active");
-    mobileMenu.classList.add("header__nav--active");
+    burgerMenu.classList.add("hidden");
+    crossIcon.classList.add("active");
+    mobileMenu.classList.add("active");
   }
 
   function closeMenu() {
     status = false;
-    burgerMenu.classList.remove("header__nav__icon--passive");
-    crossIcon.classList.remove("header__nav__cross-icon--active");
-    mobileMenu.classList.remove("header__nav--active");
+    burgerMenu.classList.remove("hidden");
+    crossIcon.classList.remove("active");
+    mobileMenu.classList.remove("active");
   }
 });
 
