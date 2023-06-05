@@ -114,19 +114,6 @@ body {
       display: none;
     }
   }
-
-  &__logo-text:hover {
-    color: variables.$fonts-color-headers-main;
-  }
-
-  &__button:hover {
-    background-color: variables.$bg-color-page-hover;
-    border: 1px solid variables.$fonts-color-main;
-
-    & > p {
-      color: variables.$fonts-color-main;
-    }
-  }
 }
 
 .header__logo-text,
@@ -213,11 +200,11 @@ body {
     visibility: hidden;
   }
 
-  &:hover p {
+  &:active p {
     color: variables.$fonts-color-main;
   }
 
-  &:hover .header__nav__item__decorate {
+  &:active .header__nav__item__decorate {
     visibility: visible;
   }
 }
@@ -434,10 +421,6 @@ body {
   }
   @media only screen and (min-width: variables.$media-laptop) {
     line-height: variables.$fonts-line-height-m-m;
-  }
-
-  &:hover {
-    border-width: 2px;
   }
 }
 
@@ -1148,6 +1131,28 @@ body {
 @media only screen and (min-width: variables.$media-tablet) {
   .header__nav-wrapper {
     display: none;
+  }
+
+  .header__logo-text:hover {
+    color: variables.$fonts-color-headers-main;
+  }
+
+  .header__button:hover {
+    background-color: variables.$bg-color-page-hover;
+    border: 1px solid variables.$fonts-color-main;
+
+    & > p {
+      color: variables.$fonts-color-main;
+    }
+  }
+
+  .button--main-block:hover {
+    background-color: variables.$bg-color-page-hover;
+    border: 2px solid variables.$fonts-color-main;
+
+    & > p {
+      color: variables.$fonts-color-main;
+    }
   }
 
   .advantage__icon-wrapper {
