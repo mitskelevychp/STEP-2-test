@@ -119,7 +119,6 @@ body {
 .header__logo-text,
 .main-block__headline-text > span,
 .repo-details-section__header,
-.button--prices,
 .prices__price__headline,
 .block-text--prices {
   text-transform: uppercase;
@@ -666,6 +665,11 @@ body {
       margin-bottom: 0px;
     }
 
+    @media only screen and (min-width: variables.$media-tablet) and (max-width: 650px) {
+      width: 95%;
+      height: 95%;
+    }
+
     &--second {
       width: 90px;
       height: 80px;
@@ -953,7 +957,7 @@ body {
       padding-bottom: 39px;
     }
     @media only screen and (min-width: variables.$media-laptop) {
-      pfont-size: variables.$fonts-size-xl-m;
+      font-size: variables.$fonts-size-xl-m;
       line-height: variables.$fonts-line-height-xl-xs;
       padding-bottom: 61px;
     }
@@ -1042,7 +1046,7 @@ body {
     margin: 38px 0px 30px;
 
     @media only screen and (min-width: variables.$media-laptop) {
-      pfont-size: variables.$fonts-size-xl-m;
+      font-size: variables.$fonts-size-xl-m;
       line-height: variables.$fonts-line-height-xl-xs;
       margin-bottom: 36px;
     }
@@ -1115,6 +1119,7 @@ body {
   background-color: variables.$bg-color-block-button;
   color: variables.$fonts-color-headers-main;
   @include mixins.font-main-regular;
+  text-transform: uppercase;
 }
 
 .block-text--prices {
@@ -1156,10 +1161,9 @@ body {
   }
 
   .advantage__icon-wrapper {
+    @include mixins.flexbox(center, center, column);
     margin-right: 23px;
     width: 111px;
-    display: flex;
-    justify-content: center;
   }
 
   .prices__price--accent .prices__price__number {
